@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title> Configuração </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid>
+
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <ion-label>
+          Taxas Cobradas
+        </ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <ion-label>Hora</ion-label>
+        <ion-item>
+          <ion-input type="number" pattern="[0-9]*" [(ngModel)]="valorHora"></ion-input>
+        </ion-item>
+      </ion-col>
+
+      <ion-col class="ion-text-center">
+        <ion-label>14</ion-label>
+        <ion-item>
+          <ion-input type="number" pattern="[0-9]*" [(ngModel)]="valor14"></ion-input>
+        </ion-item>        
+      </ion-col>
+
+      <ion-col class="ion-text-center">
+        <ion-label>30</ion-label>
+        <ion-item>
+          <ion-input type="number" pattern="[0-9]*" [(ngModel)]="valor30"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-button expand="block" (click)="salvarTaxas()"> Salvar</ion-button>
+
+</ion-content>

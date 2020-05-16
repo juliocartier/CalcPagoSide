@@ -3,19 +3,57 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>{{ folder }}</ion-title>
+    <ion-title> Home </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">{{ folder }}</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div id="container-full">
+    <p class="ion-text-center" color="dark">Valor</p>
+    <!--Criar uma div mais externa-->
+    <ion-list>
+      <ion-item>
+        <ion-input type="number" pattern="[0-9]*" [(ngModel)]="valorDig"></ion-input>
+      </ion-item>
+    </ion-list>
+  </div>
 
   <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-list>
+      <ion-item>
+        <ion-label>Maquinetas</ion-label>
+        <ion-select (ionChange)="onSelectChange($event)" interface="action-sheet" [(ngModel)]="maquineta">
+          <ion-select-option *ngFor="let maq of maquinetas" value="{{maq.nome}}"> {{ maq.nome }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Prazo</ion-label>
+        <ion-select interface="action-sheet" [(ngModel)]="prazoRecebimento">
+          <ion-select-option *ngFor="let pr of prazos" value="{{pr.prazo}}"> {{ pr.prazo }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Parcela</ion-label>
+        <ion-select interface="action-sheet" [(ngModel)]="parcelaEsc">
+          <ion-select-option *ngFor="let par of parcelas" value="{{par.parcela}}"> {{ par.parcela }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button color="primary" (click)="calcular(valorDig)">Taxa</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button color="primary" (click)="reverso(valorDig)">Reverso</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
   </div>
+
+
 </ion-content>

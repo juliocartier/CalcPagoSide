@@ -10,6 +10,14 @@ const routes: Routes = [
   {
     path: 'folder/:id',
     loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+  },
+  {
+    path: 'resultado',
+    loadChildren: () => import('./resultado/resultado.module').then( m => m.ResultadoPageModule)
+  },
+  {
+    path: 'configuracao',
+    loadChildren: () => import('./configuracao/configuracao.module').then( m => m.ConfiguracaoPageModule)
   }
 ];
 
