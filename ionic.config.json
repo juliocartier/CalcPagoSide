@@ -1,5 +1,7 @@
 {
   "name": "CalcPagoSide",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

@@ -14,18 +14,23 @@ export class ResultadoPage implements OnInit {
   parcela: any;
   taxa: any;
 
+  valorR : any;
+
   constructor(private calcService: CalcService, private router: Router) { 
     this.valor = this.calcService.valorEntrada;
-    this.valorTotal = this.calcService.valorTotal;
+    this.valorTotal = this.calcService.valorTaxa;
     this.parcela = this.calcService.parcela;
-    this.taxa = this.calcService.taxaInserida;
+    this.taxa = (this.calcService.taxaInserida*100);
+
+    this.valorR = this.calcService.valorReverso;
+    
   }
 
   ngOnInit() {
   }
 
   public voltar(){
-  //this.router.navigate(['/home']);
+  this.router.navigate(['/']);
   }
 
 }

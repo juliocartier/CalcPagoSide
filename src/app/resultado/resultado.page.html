@@ -1,15 +1,38 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>resultado</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="folder/Inbox"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Resultado</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-  <h4>Resultados</h4>
-  <p>Valor: {{ valor }}</p>
-  <p>Taxa: {{ taxa }}</p>
-  <p>Parcela: {{ parcela }}</p>
-  <p>Valor Total: {{ valorTotal }}</p>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Taxa</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <h5>Valor: {{ valor }}</h5>
+      <h5>Taxa: {{ taxa }}</h5>
+      <h5>Parcela: {{ parcela }}</h5>
+      <h5>Valor Taxa: {{ valorTotal }}</h5>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Reverso</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <h5>Valor: {{ valor }}</h5>
+      <h5>Taxa: {{ taxa }}</h5>
+      <h5>Parcela: {{ parcela }}</h5>
+      <h5>Valor Reverso: {{ valorR }}</h5>
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>
